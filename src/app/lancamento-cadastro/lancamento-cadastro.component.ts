@@ -28,8 +28,12 @@ export class LancamentoCadastroComponent implements OnInit {
   }
 
   listarPessoas(){
-    this.lancamentoService.listarPessoas()
-    .subscribe( dados => this.pessoas = dados);
+    return this.lancamentoService.listarPessoas()
+    .subscribe(pessoas => {
+      pessoas = pessoas.map( c => ({label: c.nome, value: c.codigo})
+      )
+    })
+    
   }
 
 }
