@@ -1,3 +1,4 @@
+import { LancamentoService } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -18,15 +19,17 @@ export class LancamentoCadastroComponent implements OnInit {
     { label: 'Transporte', value: 2 }
   ];
 
-  pessoas = [
-    { label: 'João da Silva', value: 1 },
-    { label: 'Sebastião Souza', value: 2 },
-    { label: 'Maria Abadia', value: 3}
-  ];
+  pessoas: Array<any>;
 
-  constructor() { }
+  constructor( private lancamentoService: LancamentoService ) { }
 
   ngOnInit() {
+    this.listarPessoas();
+  }
+
+  listarPessoas(){
+    this.lancamentoService.listarPessoas()
+    .subscribe( dados => this.pessoas = dados);
   }
 
 }

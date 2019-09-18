@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
@@ -32,7 +33,7 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     PessoaPesquisaComponent,
     PessoaTabelaComponent,
     LancamentoCadastroComponent
-
+    
   ],
   imports: [
     BrowserModule,
@@ -44,8 +45,9 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     InputTextareaModule,
     CalendarModule,
     SelectButtonModule,
-    DropdownModule
-
+    DropdownModule,
+    HttpClientModule
+    
 
 
 
