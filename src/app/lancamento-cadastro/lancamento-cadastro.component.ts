@@ -1,6 +1,8 @@
+import { PessoaService } from './../pessoa.service';
 import { CategoriaService } from './../categorias/categoria.service';
 import { LancamentoService } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-lancamento-cadastro',
@@ -17,12 +19,13 @@ export class LancamentoCadastroComponent implements OnInit {
 
   categorias = [];
 
-  pessoas: Array<any>;
+  pessoas = [];
 
-  constructor( private categoriaService: CategoriaService ) { }
+  constructor( private categoriaService: CategoriaService, private pessoaService: PessoaService ) { }
 
   ngOnInit() {
     this.carregarCategorias();
+    this.carregarPessoas();
 
   }
   carregarCategorias() {
@@ -31,6 +34,15 @@ export class LancamentoCadastroComponent implements OnInit {
         return { label: c.nome, value: c.codigo };
        } )
     );
+  }
+
+  carregarPessoas() {
+    return this.pessoaService.listarPessoas()
+      .subscribe(pessoas => this.pessoas = pessoas.map(p => {
+        return { label: p.nome, value: p.codigo };
+      })
+
+      );
   }
 
 
