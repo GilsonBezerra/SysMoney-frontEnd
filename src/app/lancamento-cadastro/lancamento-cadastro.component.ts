@@ -23,6 +23,7 @@ export class LancamentoCadastroComponent implements OnInit {
 
   ngOnInit() {
     this.listarTodas();
+    this.listarTodas();
 
   }
   listarTodas() {
