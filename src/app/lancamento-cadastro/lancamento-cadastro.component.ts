@@ -22,13 +22,14 @@ export class LancamentoCadastroComponent implements OnInit {
   constructor( private categoriaService: CategoriaService ) { }
 
   ngOnInit() {
-    this.listarTodas();
-    this.listarTodas();
+    this.carregarCategorias();
 
   }
-  listarTodas() {
-    this.categoriaService.listarTodas().subscribe(
-      categorias => this.categorias = categorias
+  carregarCategorias() {
+    return this.categoriaService.listarTodas().subscribe(
+      categorias => this.categorias = categorias.map(c => {
+        return { label: c.nome, value: c.codigo };
+       } )
     );
   }
 
