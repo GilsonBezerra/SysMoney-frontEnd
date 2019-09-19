@@ -10,12 +10,10 @@ export class LancamentoService {
 
   constructor( private http: HttpClient ) { }
 
-  lancamentoList(){
+  lancamentoList() {
     return this.http.get<any[]>(`${this.lancamentosUrl}`);
-  }  
+  }
 
-  listarPessoas(){
-    return this.http.get<any[]>(`${this.lancamentosUrl}`);
-  }  
+
 
 }

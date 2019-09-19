@@ -1,3 +1,4 @@
+import { CategoriaService } from './../categorias/categoria.service';
 import { LancamentoService } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,26 +15,22 @@ export class LancamentoCadastroComponent implements OnInit {
 
   ];
 
-  categorias = [
-    { label: 'Alimentação', value: 1 },
-    { label: 'Transporte', value: 2 }
-  ];
+  categorias = [];
 
   pessoas: Array<any>;
 
-  constructor( private lancamentoService: LancamentoService ) { }
+  constructor( private categoriaService: CategoriaService ) { }
 
   ngOnInit() {
-    this.listarPessoas();
+    this.listarTodas();
+
+  }
+  listarTodas() {
+    this.categoriaService.listarTodas().subscribe(
+      categorias => this.categorias = categorias
+    );
   }
 
-  listarPessoas(){
-    return this.lancamentoService.listarPessoas()
-    .subscribe(pessoas => {
-      pessoas = pessoas.map( c => ({label: c.nome, value: c.codigo})
-      )
-    })
-    
-  }
+
 
 }
