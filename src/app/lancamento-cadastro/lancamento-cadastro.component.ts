@@ -45,6 +45,11 @@ export class LancamentoCadastroComponent implements OnInit {
       );
   }
 
+  salvar() {
+    console.log('Salvando...');
+
+  }
+
 
 
 }
