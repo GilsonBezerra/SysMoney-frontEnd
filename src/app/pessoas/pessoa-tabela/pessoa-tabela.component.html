@@ -1,12 +1,12 @@
 <div class="ui-g">
     <div class="ui-g-12">
 
-        <p-table [value]="pessoa" [paginator]="true" [rows]="4" [responsive]="true">
+        <p-table [value]="pessoas" [paginator]="true" [rows]="5" [responsive]="true">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Nome</th>
-                    <th>Cidade</th>
-                    <th class="header-valor">Estado</th>
+                    <th class="col-cidade">Cidade</th>
+                    <th class="col-estado">Estado</th>
                     <th class="header-valor">Status</th>
                     <th class="header-valor"></th>
                 </tr>
@@ -15,8 +15,8 @@
             <ng-template pTemplate="body" let-p>
                 <tr>
                     <td>{{ p.nome }}</td>
-                    <td>{{ p.cidade }}</td>
-                    <td>{{ p.estado }}</td>
+                    <td class="col-cidade">{{ p.endereco.cidade }}</td>
+                    <td class="col-estado">{{ p.endereco.estado }}</td>
                     <td><a href="#" [pTooltip]="p.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top">{{p.status ? 'Ativo' : 'Inativo'}}</a></td>
 
                     <td class="col-icon">

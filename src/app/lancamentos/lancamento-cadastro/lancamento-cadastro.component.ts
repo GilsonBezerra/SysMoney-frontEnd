@@ -1,6 +1,6 @@
-import { PessoaService } from './../pessoa.service';
-import { CategoriaService } from './../categorias/categoria.service';
-import { LancamentoService } from './../lancamento.service';
+import { PessoaService } from '../../pessoas/pessoa.service';
+import { CategoriaService } from '../../categorias/categoria.service';
+
 import { Component, OnInit } from '@angular/core';
 
 

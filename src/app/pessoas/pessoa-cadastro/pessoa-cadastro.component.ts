@@ -1,4 +1,4 @@
-import { EstadosService } from './../estados/estados.service';
+import { EstadosService } from '../../estados/estados.service';
 import { Component, OnInit } from '@angular/core';
 
 
