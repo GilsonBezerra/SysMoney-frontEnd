@@ -25,7 +25,7 @@
                     <td class="col-valor" [ngStyle]="{'color': l.tipo === 'RECEITA' ? 'blue': 'red' }">{{l.valor}}</td>
                     <td class="col-icon">
 
-                        <a pButton icon="pi pi-pencil" style="margin:5px" pTooltip="Editar" tooltipPosition="top"></a>
+                        <button pButton icon="pi pi-pencil" style="margin:5px" pTooltip="Editar" tooltipPosition="top"></button>
                         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
 
                     </td>
@@ -41,6 +41,6 @@
     </div>
 
     <div class="ui-g-12">
-        <a pButton type="submit" label="Novo Lançamento"></a>
+        <button pButton type="submit" label="Novo Lançamento"></button>
     </div>
 </div>
