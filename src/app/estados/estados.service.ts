@@ -10,7 +10,7 @@ export class EstadosService {
 
   constructor(private http: HttpClient) { }
 
-  listarEstados() {
+  public listarEstados() {
     return this.http.get<any[]>(`${this.estadosUrl}`);
   }
 }
