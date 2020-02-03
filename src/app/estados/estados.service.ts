@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EstadosService {
 
-  estadosUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+  public estadosUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
 
   constructor(private http: HttpClient) { }
 
