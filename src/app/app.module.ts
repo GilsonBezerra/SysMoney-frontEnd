@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardModule } from 'primeng/card';
 
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { SelectButtonModule } from 'primeng/selectbutton';
@@ -52,7 +53,8 @@ import { PessoasModule } from './pessoas/pessoas.module';
     FormsModule,
     NavegacaoModule,
     LancamentosModule,
-    PessoasModule
+    PessoasModule,
+    CardModule
 
 
   ],

@@ -12,7 +12,7 @@
 
             <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label>Vencimento </label>
-                <p-calendar dateFormat="dd/mm/yy"></p-calendar>
+                <p-calendar dateFormat="dd/mm/yy" name="vencimento"></p-calendar>
             </div>
 
             <div class="ui-g-6 ui-md-3 ui-fluid">
@@ -27,12 +27,12 @@
 
             </div>
 
-            <div class="ui-g-12 ui-md-3 ui-fluid">
+            <div class="ui-g-12 ui-md-2 ui-fluid">
                 <label>Valor </label>
                 <input pInputText type="text" placeholder="0,00" currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',', allowNegative: false }" required>
             </div>
 
-            <div class="ui-g-12 ui-md-6 ui-fluid">
+            <div class="ui-g-12 ui-md-4 ui-fluid">
                 <label>Categoria </label>
                 <p-dropdown [options]="categorias" placeholder="Selecione"></p-dropdown>
             </div>
@@ -42,7 +42,7 @@
                 <p-dropdown [options]="pessoas" placeholder="Selecione"></p-dropdown>
             </div>
 
-            <div class="ui-g-12 ui-fluid">
+            <div class="ui-g-11 ui-fluid">
                 <label>Observação</label>
                 <textarea pInputTextarea rows="3"></textarea>
             </div>
