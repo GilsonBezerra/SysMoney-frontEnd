@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class PessoaService {
 
 
-  pessoasUrl = 'http://localhost:8080/pessoa';
-  /*pessoasUrl = 'http://192.168.0.10:8080/pessoa'; */
+  // pessoasUrl = 'http://localhost:8080/pessoa';
+  pessoasUrl = 'https://api.myjson.com/bins/17qtco';
 
   constructor(
     private http: HttpClient
