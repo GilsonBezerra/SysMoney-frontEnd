@@ -18,7 +18,7 @@ export class PessoaTabelaComponent implements OnInit {
     this.carregarPessoas();
   }
 
-  carregarPessoas() {
+  public carregarPessoas() {
     this.pessoaService.listarPessoas()
       .subscribe(pessoas => this.pessoas = pessoas);
 

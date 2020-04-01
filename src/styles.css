@@ -52,8 +52,8 @@ label {
     text-align: center;
 }
 
-@media (max-width:640px) {
-    button {
+@media(max-width: 578px) {
+    .container button {
         width: 100%;
     }
 }
