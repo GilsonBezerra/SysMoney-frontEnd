@@ -49,7 +49,9 @@ export class LancamentoCadastroComponent implements OnInit {
   public carregarPessoas() {
     return this.pessoaService.listarPessoas()
       .subscribe(pessoas => this.pessoas = pessoas.map(p => {
-        return { label: p.nome, value: p.codigo };
+        return {
+          label: p.nome, value: p.codigo
+        };
       })
 
       );

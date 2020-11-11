@@ -26,7 +26,7 @@
                     <td class="col-icon">
 
                         <button pButton icon="pi pi-pencil" style="margin:5px" pTooltip="Editar" tooltipPosition="top"></button>
-                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="delete(l.codigo)"></button>
 
                     </td>
 
@@ -43,4 +43,5 @@
     <div class="ui-g-12">
         <button pButton type="submit" label="Novo Lançamento"></button>
     </div>
+    
 </div>

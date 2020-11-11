@@ -1,5 +1,8 @@
 import { LancamentoService } from './../lancamento.service';
 import { Component, OnInit } from '@angular/core';
+import { Lancamento } from '../../models/lancamento';
+import { ToastrService } from 'ngx-toastr/toastr/toastr.service';
+import { NotificationService } from '../../notification.service';
 
 
 @Component({
@@ -9,9 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LancamentosTabelaComponent implements OnInit {
 
-  lancamentos: Array<any>;
+  public lancamentos: Lancamento[];
 
-  constructor( private lancamentoService: LancamentoService ) { }
+  constructor(
+    private lancamentoService: LancamentoService,
+    private toastr: ToastrService,
+    private notify: NotificationService
+  ) { }
 
   ngOnInit() {
     this.listarLancamento();
@@ -19,9 +26,23 @@ export class LancamentosTabelaComponent implements OnInit {
 
   listarLancamento() {
     this.lancamentoService.lancamentoList()
-      .subscribe(dados => this.lancamentos = dados);
+      .subscribe((dados) => {
+        this.lancamentos = dados
+      });
+  }
+  
+  public delete(codigo: number) {
+    this.lancamentoService.excluirLancamento(codigo)
+      .then(() => {
+        // alert(`O lançamento ${codigo} foi excluído com sucesso`);
+        this.notify.showSuccess('Lançamento excluído com sucesso!', 'Feito!');
+        this.listarLancamento();
+      });
+  }
+
+
   }
 
 
 
-}
+

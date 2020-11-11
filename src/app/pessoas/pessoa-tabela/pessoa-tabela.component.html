@@ -12,12 +12,12 @@
                 </tr>
 
             </ng-template>
-            <ng-template pTemplate="body" let-p>
+            <ng-template pTemplate="body" let-pessoa>
                 <tr>
-                    <td>{{ p.nome }}</td>
-                    <td class="col-cidade">{{ p.endereco.cidade }}</td>
-                    <td class="col-estado">{{ p.endereco.estado }}</td>
-                    <td><a href="#" [pTooltip]="p.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top">{{p.status ? 'Inativo' : 'Ativo'}}</a></td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td class="col-cidade">{{ pessoa.endereco.cidade }}</td>
+                    <td class="col-estado">{{ pessoa.endereco.estado }}</td>
+                    <td><a href="#" [pTooltip]="pessoa.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top">{{pessoa.status ? 'Inativo' : 'Ativo'}}</a></td>
 
                     <td class="col-icon">
                         <a pButton icon="pi pi-pencil" style="margin: 5px" pTooltip="Editar" tooltipPosition="top"></a>
@@ -25,9 +25,6 @@
                     </td>
                 </tr>
             </ng-template>
-
-
-
         </p-table>
 
     </div>

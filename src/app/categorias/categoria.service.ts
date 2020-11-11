@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriaService {
 
-  // categoriasUrl = 'http://localhost:8080/categorias';
-  categoriasUrl = 'https://api.myjson.com/bins/18c8yg';
+  categoriasUrl = environment.categoria;
+  
 
   constructor(private http: HttpClient) { }
 
