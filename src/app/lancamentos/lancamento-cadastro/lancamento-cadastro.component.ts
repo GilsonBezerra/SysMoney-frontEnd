@@ -2,8 +2,6 @@ import { PessoaService } from '../../pessoas/pessoa.service';
 import { CategoriaService } from '../../categorias/categoria.service';
 
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-lancamento-cadastro',

@@ -21,5 +21,10 @@
     <p-card>
         <app-pessoa-pesquisa></app-pessoa-pesquisa>
     </p-card><br><br> -->
-
+ <p-confirmDialog #confirmacao>
+     <p-footer>
+         <button type="button" pButton icon="pi pi-check" label="Sim" (click)="confirmacao.accept()"></button>
+         <button type="button" pButton icon="pi pi-times" label="Não" (click)="confirmacao.reject()"></button>
+     </p-footer>
+ </p-confirmDialog>
 </div>

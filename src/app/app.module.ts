@@ -1,9 +1,7 @@
+// Import de Modules
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardModule } from 'primeng/card';
-
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
@@ -12,16 +10,32 @@ import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ButtonModule } from 'primeng/components/button/button';
 import { TableModule } from 'primeng/components/table/table';
 import { TooltipModule } from 'primeng/components/tooltip/tooltip';
+import { PessoasModule } from './pessoas/pessoas.module';
 import { InputTextareaModule } from 'primeng/components/inputtextarea/inputtextarea';
 import { CalendarModule } from 'primeng/components/calendar/calendar';
-
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { MessageComponent } from './message/message.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
-import { PessoasModule } from './pessoas/pessoas.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
+import { LOCALE_ID, NgModule } from '@angular/core';
+
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt');
+
+// Import de Components
+import { AppComponent } from './app.component';
+import { MessageComponent } from './message/message.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
+// Import de Services/Providers
+import { ConfirmationService } from 'primeng/components/common/confirmationservice';
+import { LancamentoService } from './lancamentos/lancamento.service';
+import { PessoaService } from './pessoas/pessoa.service';
+
+
 
 @NgModule({
   declarations: [
@@ -49,11 +63,36 @@ import { PessoasModule } from './pessoas/pessoas.module';
     NavegacaoModule,
     LancamentosModule,
     PessoasModule,
-    CardModule
-
-
+    CardModule,
+    ConfirmDialogModule,
   ],
-  providers: [],
+  providers: [
+    LancamentoService,
+    PessoaService,
+    ConfirmationService,
+    {
+      provide: LOCALE_ID,
+      useValue: "pt-BR"
+    }
+   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/**
+ * app.module.ts
+
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import {registerLocaleData} from '@angular/common';
+registerLocaleData(localePt)
+
+ providers: [{
+    provide: LOCALE_ID,
+    useValue: "pt-BR"
+  }],
+.html
+
+currency:'BRL'
+ */

@@ -22,11 +22,11 @@
                     <td>{{l.descricao}}</td>
                     <td>{{l.dataVencimento}}</td>
                     <td>{{l.dataPagamento}}</td>
-                    <td class="col-valor" [ngStyle]="{'color': l.tipo === 'RECEITA' ? 'blue': 'red' }">{{l.valor}}</td>
+                    <td class="col-valor" [ngStyle]="{'color': l.tipo === 'RECEITA' ? 'blue': 'red' }">{{l.valor | currency:'BRL' }}</td>
                     <td class="col-icon">
 
                         <button pButton icon="pi pi-pencil" style="margin:5px" pTooltip="Editar" tooltipPosition="top"></button>
-                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="delete(l.codigo)"></button>
+                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmarExclusao(l.codigo)"></button>
 
                     </td>
 
