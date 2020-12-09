@@ -18,8 +18,8 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
-import { LOCALE_ID, NgModule } from '@angular/core';
 
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 registerLocaleData(localePt, 'pt');
@@ -34,6 +34,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 import { LancamentoService } from './lancamentos/lancamento.service';
 import { PessoaService } from './pessoas/pessoa.service';
+import { SegurancaRoutingModule } from './seguranca/seguranca-routing.module';
+import { LoginComponent } from './seguranca/login/login.component';
 
 
 
@@ -42,6 +44,7 @@ import { PessoaService } from './pessoas/pessoa.service';
     AppComponent,
     NavbarComponent,
     MessageComponent,
+    LoginComponent
 
 
   ],
@@ -65,6 +68,7 @@ import { PessoaService } from './pessoas/pessoa.service';
     PessoasModule,
     CardModule,
     ConfirmDialogModule,
+    SegurancaRoutingModule
   ],
   providers: [
     LancamentoService,
@@ -86,6 +90,7 @@ export class AppModule { }
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
+import { SegurancaRoutingModule } from './seguranca/seguranca-routing.module';
 registerLocaleData(localePt)
 
  providers: [{

@@ -27,7 +27,6 @@ export class LancamentoService {
       .pipe(
         map(res => res['content'])
     )
-
   }
 
   public novoLancamento() {

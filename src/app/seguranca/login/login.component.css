@@ -1,0 +1,12 @@
+.form__login {
+    transform: translate(50%, 30%);
+    width: 600px;
+    height: 600px;
+}
+input {
+    margin-left: -5px;
+}
+
+button {
+    margin-left: -5px;
+}
