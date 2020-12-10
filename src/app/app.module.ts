@@ -18,6 +18,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmDialogModule } from 'primeng/components/confirmdialog/confirmdialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -68,7 +69,8 @@ import { LoginComponent } from './seguranca/login/login.component';
     PessoasModule,
     CardModule,
     ConfirmDialogModule,
-    SegurancaRoutingModule
+    SegurancaRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     LancamentoService,
