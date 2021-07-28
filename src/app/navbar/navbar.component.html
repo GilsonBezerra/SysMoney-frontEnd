@@ -2,14 +2,14 @@
     <div class="container">
         <div class="ui-g">
             <div class="ui-g-12">
-                <a href="javascript:;"><i class="pi pi-bars navbar-toggle" (click)="exibirmenulateral = !exibirmenulateral"></i></a>
+                <a href="javascript:;"><i class="pi pi-bars navbar-toggle" (click)="exibirMenuLateral()"></i></a>
 
             </div>
 
         </div>
     </div>
 
-    <ul class="navbar-menu" [hidden]="!exibirmenulateral">
+    <ul class="navbar-menu" *ngIf="exibirmenulateral === true">
         <li class="navbar-usuario">Gilson Bezerra</li>
         <li class="navbar-menuitem"><a href="#">Lançamentos</a></li>
         <li class="navbar-menuitem"><a href="#">Pessoas</a></li>

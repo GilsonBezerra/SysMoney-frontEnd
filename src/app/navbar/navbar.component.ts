@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public exibirmenulateral = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public exibirMenuLateral() {
+    this.exibirmenulateral = !this.exibirmenulateral;
   }
 
 }
